@@ -1,7 +1,12 @@
 import { Box, Button, ButtonGroup } from "@mui/material";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 
 const HomePage: FC = () => {
+
+  useEffect(() => {
+    document.title = 'Zoo';
+  }, []);
+
   return (
     <Box
       height="100vh"

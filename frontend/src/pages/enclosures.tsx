@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import {
   EnclosureEditDialog,
   EnclosureInput,
@@ -9,6 +9,10 @@ import {
 const EnclosuresPage: FC = () => {
   const [open, setOpen] = useState(false);
   const [enclosure, setEnclosure] = useState();
+
+  useEffect(() => {
+    document.title = 'Gehege';
+  }, []);
 
   return (
     <Box>
