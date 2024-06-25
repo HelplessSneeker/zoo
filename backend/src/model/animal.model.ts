@@ -19,10 +19,10 @@ export class AnimalModel {
 
   async editAnimal(
     id: string,
-    name?: string,
-    species?: string,
-    age?: number,
-    sex?: Sex,
+    name: string,
+    species: string,
+    age: number,
+    sex: Sex,
   ) {
     return await prisma.animal.update({
       where: {

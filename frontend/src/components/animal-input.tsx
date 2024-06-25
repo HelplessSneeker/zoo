@@ -34,28 +34,30 @@ const AnimalInput: FC<AnimalInputProps> = (props) => {
   const queryClient = useQueryClient();
 
   useEffect(() => {
-    if(props.id) {
-      setName(props.name || '');
+    if (props.id) {
+      setName(props.name || "");
       setAge(props.age ? +props.age : 0);
-      setSpecies(props.species || '');
-      setSex(props.sex || '');
+      setSpecies(props.species || "");
+      setSex(props.sex || "");
     }
-  }, [props.id])
+  }, [props.id]);
 
   const mutation = useMutation({
     mutationFn: () =>
-      props.id ? animalsService.editAnimal({
-        id: props.id,
-        name,
-        species,
-        age,
-        sex,
-      }) : animalsService.createAnimal({
-        name,
-        species,
-        age,
-        sex,
-      }),
+      props.id
+        ? animalsService.editAnimal({
+            id: props.id,
+            name,
+            species,
+            age,
+            sex,
+          })
+        : animalsService.createAnimal({
+            name,
+            species,
+            age,
+            sex,
+          }),
     onSuccess: () => {
       setName("");
       setSpecies("");

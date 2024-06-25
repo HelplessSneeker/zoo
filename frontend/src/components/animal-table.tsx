@@ -34,7 +34,7 @@ const AnimalTable: FC<AnimalTableProps> = (props) => {
   });
 
   useEffect(() => {
-    if (query.data) {
+    if (query.data && query.data.length !== undefined) {
       setAnimals(query.data);
     }
   }, [query]);
@@ -54,7 +54,7 @@ const AnimalTable: FC<AnimalTableProps> = (props) => {
           </TableHead>
           <TableBody>
             {animals.map((row: any) => (
-              <TableRow>
+              <TableRow key={row.id}>
                 <TableCell component="th" scope="row">
                   {row.name}
                 </TableCell>
@@ -64,7 +64,11 @@ const AnimalTable: FC<AnimalTableProps> = (props) => {
                   {row.sex === "MALE" ? "Männlich" : "Weiblich"}
                 </TableCell>
                 <TableCell>
-                  <Button onClick={() => props.onEdit(row)} variant="outlined" fullWidth>
+                  <Button
+                    onClick={() => props.onEdit(row)}
+                    variant="outlined"
+                    fullWidth
+                  >
                     Edit
                   </Button>
                 </TableCell>
