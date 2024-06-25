@@ -11,7 +11,7 @@ const HomePage: FC = () => {
     >
       <ButtonGroup variant="outlined">
         <Button href="/animals">Tiere Verwalten</Button>
-        <Button>Gehege Verwalten</Button>
+        <Button href="/enclosures">Gehege Verwalten</Button>
         <Button>Tiere/Gehege zuordnen</Button>
       </ButtonGroup>
     </Box>
