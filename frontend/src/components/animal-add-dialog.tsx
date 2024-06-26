@@ -60,7 +60,7 @@ const AnimalAddDialog: FC<AnimalAddDialogProps> = (props) => {
             return { ...a, label: a.name };
           })}
           onChange={(e, v) => onSelectAnimal(v.id)}
-          renderInput={(params) => <TextField {...params} label="Movie" />}
+          renderInput={(params) => <TextField {...params} label="Tiere" />}
         />
       </DialogContent>
     </Dialog>
