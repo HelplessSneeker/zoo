@@ -1,9 +1,4 @@
 
-# Zoo
-
-A brief description of what this project does and who it's for
-
-
 ## Run With Docker
 
 To build and start the application using docker simply go into the Directory and run
