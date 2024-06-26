@@ -7,5 +7,6 @@ const animalController = new AnimalController();
 router.get("/", animalController.getAnimals);
 router.post("/", animalController.createAnimal);
 router.post("/edit", animalController.editAnimal);
+router.get("/available", animalController.getAvailableAnimals);
 
 export default router;

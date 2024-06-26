@@ -3,7 +3,12 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { AnimalsPage, EnclosuresPage, HomePage } from "./pages";
+import {
+  AnimalEnclosures,
+  AnimalsPage,
+  EnclosuresPage,
+  HomePage,
+} from "./pages";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const router = createBrowserRouter([
@@ -18,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/enclosures",
     Component: EnclosuresPage,
+  },
+  {
+    path: "/animalEnclosures",
+    Component: AnimalEnclosures,
   },
 ]);
 

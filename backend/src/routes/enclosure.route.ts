@@ -7,5 +7,7 @@ const enclosureController = new EnclosureController();
 router.get("/", enclosureController.getEnclosures);
 router.post("/", enclosureController.createEnclosure);
 router.post("/edit", enclosureController.editEnclosure);
+router.post("/add", enclosureController.addAnimalToEnclosure);
+router.post("/remove", enclosureController.removeAnimalFromEnclosure);
 
 export default router;

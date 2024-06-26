@@ -12,7 +12,11 @@ export class EnclosureModel {
   }
 
   async getEnclosures() {
-    return await prisma.enclosure.findMany();
+    return await prisma.enclosure.findMany({
+      include: {
+        animals: true,
+      },
+    });
   }
 
   async editEnclosure(id: string, name: string, place: string, size: number) {
@@ -24,6 +28,36 @@ export class EnclosureModel {
         name,
         place,
         size,
+      },
+    });
+  }
+
+  async addAnimalToEnclosure(enclosureId: string, animalId: string) {
+    return await prisma.enclosure.update({
+      where: {
+        id: enclosureId,
+      },
+      data: {
+        animals: {
+          connect: {
+            id: animalId,
+          },
+        },
+      },
+    });
+  }
+
+  async removeAnimalFromEnclosure(enclosureId: string, animalId: string) {
+    return await prisma.enclosure.update({
+      where: {
+        id: enclosureId,
+      },
+      data: {
+        animals: {
+          disconnect: {
+            id: animalId,
+          },
+        },
       },
     });
   }

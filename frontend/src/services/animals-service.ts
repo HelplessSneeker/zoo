@@ -15,6 +15,14 @@ export class AnimalsService {
     return response.json();
   }
 
+  async getAvailableAnimals(): Promise<any> {
+    const response = await fetch(`${this.baseUrl}/animals/available`);
+    if (!response.ok) {
+      throw new Error("Failed to fetch animals");
+    }
+    return response.json();
+  }
+
   async createAnimal(newAnimalData: any): Promise<any> {
     const response = await fetch(`${this.baseUrl}/animals`, {
       method: "POST",

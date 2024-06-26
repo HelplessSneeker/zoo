@@ -20,4 +20,22 @@ export class EnclosureController {
     const enclosure = await enclosureModel.editEnclosure(id, name, place, size);
     res.json(enclosure.id);
   }
+
+  async addAnimalToEnclosure(req: Request, res: Response) {
+    const { enclosureId, animalId } = req.body;
+    const enclosure = await enclosureModel.addAnimalToEnclosure(
+      enclosureId,
+      animalId,
+    );
+    res.json(enclosure.id);
+  }
+
+  async removeAnimalFromEnclosure(req: Request, res: Response) {
+    const { enclosureId, animalId } = req.body;
+    const enclosure = await enclosureModel.removeAnimalFromEnclosure(
+      enclosureId,
+      animalId,
+    );
+    res.json(enclosure.id);
+  }
 }

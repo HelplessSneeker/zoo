@@ -1,4 +1,6 @@
+import AnimalAddDialog from "./animal-add-dialog";
 import AnimalEditDialog from "./animal-edit-dialog";
+import AnimalEnclosureList from "./animal-enclosure-list";
 import AnimalInput from "./animal-input";
 import AnimalTable from "./animal-table";
 import EnclosureEditDialog from "./enclosure-edit-dialog";
@@ -12,4 +14,6 @@ export {
   EnclosureTable,
   EnclosureInput,
   EnclosureEditDialog,
+  AnimalEnclosureList,
+  AnimalAddDialog,
 };

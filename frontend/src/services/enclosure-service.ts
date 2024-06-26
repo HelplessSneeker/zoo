@@ -46,4 +46,42 @@ export class EnclosuresService {
 
     return response.json();
   }
+
+  async addAnimalToEnclosure(enclosureId: string, animalId: string) {
+    const response = await fetch(`${this.baseUrl}/enclosures/add`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        enclosureId,
+        animalId,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to add animal to enclosure");
+    }
+
+    return response.json();
+  }
+
+  async removeAnimalFromEnclosure(enclosureId: string, animalId: string) {
+    const response = await fetch(`${this.baseUrl}/enclosures/remove`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        enclosureId,
+        animalId,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to remove animal from enclosure");
+    }
+
+    return response.json();
+  }
 }

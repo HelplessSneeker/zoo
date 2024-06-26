@@ -20,4 +20,9 @@ export class AnimalController {
     const animal = await animalModel.editAnimal(id, name, species, age, sex);
     res.json(animal.id);
   }
+
+  async getAvailableAnimals(req: Request, res: Response) {
+    const animals = await animalModel.getAvailableAnimals();
+    res.json(animals);
+  }
 }

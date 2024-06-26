@@ -7,7 +7,7 @@ const AnimalsPage: FC = () => {
   const [animal, setAnimal] = useState();
 
   useEffect(() => {
-    document.title = 'Tiere';
+    document.title = "Tiere";
   }, []);
 
   return (

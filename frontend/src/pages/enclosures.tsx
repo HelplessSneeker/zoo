@@ -11,7 +11,7 @@ const EnclosuresPage: FC = () => {
   const [enclosure, setEnclosure] = useState();
 
   useEffect(() => {
-    document.title = 'Gehege';
+    document.title = "Gehege";
   }, []);
 
   return (

@@ -36,4 +36,12 @@ export class AnimalModel {
       },
     });
   }
+
+  async getAvailableAnimals() {
+    return await prisma.animal.findMany({
+      where: {
+        enclosureId: null,
+      },
+    });
+  }
 }
